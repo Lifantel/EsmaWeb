@@ -8,7 +8,6 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      /* Mor - Siyah arka plan */
       background: linear-gradient(135deg, #6a0dad, #000000);
       color: #f5f5f5;
     }
@@ -33,7 +32,6 @@
       max-width: 1000px;
       margin: auto;
     }
-    /* Arama kutusu */
     #searchInput {
       width: 100%;
       padding: 12px;
@@ -46,7 +44,6 @@
     #searchInput:focus {
       border-color: gold;
     }
-    /* Galeri */
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -76,7 +73,6 @@
       transform: translateY(-5px);
       box-shadow: 0 8px 20px rgba(0,0,0,0.5);
     }
-    /* Pop-up (modal) */
     .modal {
       display: none;
       position: fixed;
@@ -112,7 +108,22 @@
       font-size: 0.9rem;
       margin-top: 40px;
     }
+    .social-icons {
+      margin-top: 10px;
+    }
+    .social-icons a {
+      color: #f5f5f5;
+      font-size: 1.5rem;
+      margin: 0 5px;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .social-icons a:hover {
+      color: gold;
+    }
   </style>
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
@@ -125,38 +136,34 @@
     <input type="text" id="searchInput" placeholder="🔎 Saç modeli ara... (örn: bob, dalgalı)">
     
     <div class="gallery" id="gallery">
-
-      <!-- Örnek saç modelleri -->
       <div class="card" data-name="uzun dalgalı">
         <img src="img/sac1.jpg" alt="Saç Modeli 1">
         <p>Uzun Dalgalı</p>
       </div>
-
       <div class="card" data-name="kısa bob">
         <img src="img/sac2.jpg" alt="Saç Modeli 2">
         <p>Kısa Bob</p>
       </div>
-
       <div class="card" data-name="katlı kesim">
         <img src="img/sac3.jpg" alt="Saç Modeli 3">
         <p>Katlı Kesim</p>
       </div>
-
-      <div class="card" data-name="Örgü">
+      <div class="card" data-name="örgü">
         <img src="img/sac4.jpg" alt="Saç Modeli 4">
         <p>Ters Örgü</p>
       </div>
-
-       <div class="card" data-name="v kesim">
+      <div class="card" data-name="v kesim">
         <img src="img/sac5.jpg" alt="Saç Modeli 5">
         <p>V Kesim</p>
       </div>
-
       <div class="card" data-name="kelebek kesim">
         <img src="img/sac6.jpg" alt="Saç Modeli 6">
         <p>Kelebek Kesim</p>
       </div>
-
+      <div class="card" data-name="Boş">
+        <img src="img/sac7.jpg" alt="Saç Modeli 7">
+        <p>.</p>
+      </div>
     </div>
   </div>
 
@@ -167,11 +174,15 @@
   </div>
 
   <footer>
-    © 2025 Esma Kuaför | Adana/SARIÇAM 
+    © 2025 Esma Kuaför | Adana/SARIÇAM
+    <div class="social-icons">
+      <a href="https://www.instagram.com/hesap_adin" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
   </footer>
 
   <script>
-    // Arama filtresi
     const searchInput = document.getElementById('searchInput');
     const cards = document.querySelectorAll('.card');
 
@@ -183,7 +194,6 @@
       });
     });
 
-    // Modal açma
     const modal = document.getElementById("modal");
     const modalImg = document.getElementById("modalImg");
     const closeBtn = document.getElementById("close");
@@ -195,7 +205,6 @@
       });
     });
 
-    // Modal kapama
     closeBtn.onclick = function() {
       modal.style.display = "none";
     }
